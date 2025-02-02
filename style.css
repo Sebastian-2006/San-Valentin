@@ -1,101 +1,149 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fce4ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  color: #880e4f;
+}
+
+.container {
+  background-color: #f8bbd0;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px; /* Aseguramos que no se vea muy grande en móviles */
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #d81b60;
+}
+
+.heart-animation {
+  font-size: 70px;
+  animation: heartbeat 1.5s infinite;
+  color: #d81b60;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
   }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fce4ec;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    text-align: center;
-    color: #880e4f;
+  50% {
+    transform: scale(1.2);
   }
-  
+}
+
+button {
+  background-color: #880e4f;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 1.1em;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 15px;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.hidden {
+  display: none;
+}
+
+#response {
+  margin-top: 20px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#yesBtn {
+  background-color: #43a047;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+#noBtn {
+  background-color: #e53935;
+}
+
+#yesBtn.growing {
+  transform: scale(3);
+}
+
+#yesBtn.normal {
+  transform: scale(1);
+}
+
+#noBtn.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
   .container {
-    background-color: #f8bbd0;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 500px;
+    max-width: 90%;
+    padding: 15px;
   }
-  
+
   h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #d81b60;
+    font-size: 1.8em;
   }
-  
+
   .heart-animation {
-    font-size: 80px;
-    animation: heartbeat 1.5s infinite;
-    color: #d81b60;
+    font-size: 60px;
   }
-  
-  @keyframes heartbeat {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-  }
-  
+
   button {
-    background-color: #880e4f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 15px;
-    transition: transform 0.2s ease, background-color 0.3s;
+    font-size: 1em;
+    padding: 12px 25px;
   }
-  
-  button:hover {
-    transform: scale(1.1);
-  }
-  
-  button:active {
-    transform: scale(0.95);
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
+
   #response {
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.2em;
   }
-  
-  #yesBtn {
-    background-color: #43a047;
-    transition: transform 0.5s ease-in-out;
-    z-index: 1; /* Aseguramos que esté encima del botón "No" */
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+    padding: 10px;
   }
-  
-  #noBtn {
-    background-color: #e53935;
+
+  h1 {
+    font-size: 1.6em;
   }
-  
-  #yesBtn.growing {
-    transform: scale(3); /* El botón crece cuando el usuario hace clic en "No" */
+
+  .heart-animation {
+    font-size: 50px;
   }
-  
-  #yesBtn.normal {
-    transform: scale(1); /* El botón vuelve a su tamaño original */
+
+  button {
+    font-size: 0.9em;
+    padding: 12px 20px;
   }
-  
-  #noBtn.disabled {
-    pointer-events: none; /* Deshabilita el botón "No" mientras "Sí" está creciendo */
-    opacity: 0.5; /* Hace que el botón "No" se vea deshabilitado */
+
+  #response {
+    font-size: 1.1em;
   }
-  
+}
