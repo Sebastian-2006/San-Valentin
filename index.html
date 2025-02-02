@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quieres ser mi San Valentín?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>¡Feliz Día de San Valentín, mi amor! 💖</h1>
+    <div class="heart-animation">
+      <span id="heart">&#10084;</span>
+    </div>
+    <p>¿Quieres ser mi San Valentín? 💌</p>
+    <button id="yesBtn">¡Sí, quiero! 💕</button>
+    <button id="noBtn">No, gracias 😔</button>
+    <p id="response" class="hidden"></p>
+  </div>
+
+  <script>let yesButton = document.getElementById('yesBtn');
+    let noButton = document.getElementById('noBtn');
+    let response = document.getElementById('response');
+    let heart = document.getElementById('heart');
+    
+    // Al hacer clic en "No", el botón "Sí" comienza a crecer
+    noButton.addEventListener('click', function() {
+      yesButton.classList.add('growing'); // Agrega la clase para que el botón crezca
+      noButton.classList.add('disabled'); // Deshabilita el botón "No" (no se puede hacer clic)
+      response.classList.add('hidden'); // Ocultar el mensaje si es que ya se mostró
+    });
+    
+    // Al hacer clic en el botón "Sí" cuando ya haya crecido, muestra el mensaje y lo vuelve a su tamaño original
+    yesButton.addEventListener('click', function() {
+      if (yesButton.classList.contains('growing')) {
+        // Mostrar mensaje bonito después de que el botón haya crecido
+        response.textContent = '¡Yay! 💕 ¡Gracias por decir que sí, mi amor! 😍';
+        response.style.color = '#43a047';
+        response.classList.remove('hidden');
+        
+        // Cambiar el color del corazón a verde
+        heart.style.color = '#43a047'; // Corazón verde
+        
+        // Volver a tamaño normal
+        yesButton.classList.remove('growing');
+        yesButton.classList.add('normal');
+        
+        // Habilitar el botón "No" nuevamente
+        noButton.classList.remove('disabled');
+      }
+    });
+    </script>
+</body>
+</html>
