@@ -23,31 +23,25 @@
     let response = document.getElementById('response');
     let heart = document.getElementById('heart');
     
-    // Al hacer clic en "No", el botón "Sí" comienza a crecer
-    noButton.addEventListener('click', function() {
-      yesButton.classList.add('growing'); // Agrega la clase para que el botón crezca
-      noButton.classList.add('disabled'); // Deshabilita el botón "No" (no se puede hacer clic)
-      response.classList.add('hidden'); // Ocultar el mensaje si es que ya se mostró
+    // Al hacer clic en "Sí", muestra el mensaje bonito
+    yesButton.addEventListener('click', function() {
+      // Mostrar el mensaje bonito inmediatamente
+      response.textContent = '¡Yay! 💕 ¡Gracias por decir que sí, mi amor! 😍';
+      response.style.color = '#43a047';  // Cambiar el color del texto del mensaje
+      response.classList.remove('hidden'); // Hacer visible el mensaje
+      
+      // Cambiar el color del corazón a verde
+      heart.style.color = '#43a047'; // Corazón verde
+      
+      // El tamaño del botón "Sí" no cambia
+      yesButton.classList.remove('growing');
     });
     
-    // Al hacer clic en el botón "Sí" cuando ya haya crecido, muestra el mensaje y lo vuelve a su tamaño original
-    yesButton.addEventListener('click', function() {
-      if (yesButton.classList.contains('growing')) {
-        // Mostrar mensaje bonito después de que el botón haya crecido
-        response.textContent = '¡Yay! 💕 ¡Gracias por decir que sí, mi amor! 😍';
-        response.style.color = '#43a047';
-        response.classList.remove('hidden');
-        
-        // Cambiar el color del corazón a verde
-        heart.style.color = '#43a047'; // Corazón verde
-        
-        // Volver a tamaño normal
-        yesButton.classList.remove('growing');
-        yesButton.classList.add('normal');
-        
-        // Habilitar el botón "No" nuevamente
-        noButton.classList.remove('disabled');
-      }
+    // Al hacer clic en "No", el botón "Sí" empieza a crecer y "No" se desactiva
+    noButton.addEventListener('click', function() {
+      yesButton.classList.add('growing'); // El botón "Sí" empieza a crecer
+      noButton.classList.add('disabled'); // Deshabilita el botón "No" (no se puede hacer clic)
+      response.classList.add('hidden'); // Oculta el mensaje si es que ya se mostró
     });
     </script>
 </body>
