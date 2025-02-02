@@ -1,149 +1,144 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #fce4ec;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  text-align: center;
-  color: #880e4f;
-}
-
-.container {
-  background-color: #f8bbd0;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 400px; /* Aseguramos que no se vea muy grande en móviles */
-}
-
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #d81b60;
-}
-
-.heart-animation {
-  font-size: 70px;
-  animation: heartbeat 1.5s infinite;
-  color: #d81b60;
-}
-
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  50% {
-    transform: scale(1.2);
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: #880e4f;
   }
-}
-
-button {
-  background-color: #880e4f;
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  font-size: 1.1em;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 15px;
-  transition: transform 0.2s ease, background-color 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-.hidden {
-  display: none;
-}
-
-#response {
-  margin-top: 20px;
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-#yesBtn {
-  background-color: #43a047;
-  transition: transform 0.5s ease-in-out;
-  z-index: 1;
-}
-
-#noBtn {
-  background-color: #e53935;
-}
-
-#yesBtn.growing {
-  transform: scale(3);
-}
-
-#yesBtn.normal {
-  transform: scale(1);
-}
-
-#noBtn.disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
+  
   .container {
-    max-width: 90%;
-    padding: 15px;
+    background-color: #f8bbd0;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
   }
-
+  
   h1 {
-    font-size: 1.8em;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #d81b60;
   }
-
+  
   .heart-animation {
-    font-size: 60px;
+    font-size: 70px;
+    animation: heartbeat 1.5s infinite;
+    color: #d81b60;
   }
-
+  
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
   button {
-    font-size: 1em;
-    padding: 12px 25px;
-  }
-
-  #response {
-    font-size: 1.2em;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    max-width: 95%;
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 1.6em;
-  }
-
-  .heart-animation {
-    font-size: 50px;
-  }
-
-  button {
-    font-size: 0.9em;
-    padding: 12px 20px;
-  }
-
-  #response {
+    background-color: #880e4f;
+    color: white;
+    border: none;
+    padding: 10px 25px;
     font-size: 1.1em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 15px;
+    transition: transform 0.2s ease, background-color 0.3s;
   }
-}
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #response {
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  
+  #yesBtn {
+    background-color: #43a047;
+  }
+  
+  #noBtn {
+    background-color: #e53935;
+  }
+  
+  #yesBtn.growing {
+    transform: scale(3);  /* Aumenta el tamaño del botón */
+  }
+  
+  #noBtn.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .container {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.8em;
+    }
+  
+    .heart-animation {
+      font-size: 60px;
+    }
+  
+    button {
+      font-size: 1em;
+      padding: 12px 25px;
+    }
+  
+    #response {
+      font-size: 1.2em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      max-width: 95%;
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 1.6em;
+    }
+  
+    .heart-animation {
+      font-size: 50px;
+    }
+  
+    button {
+      font-size: 0.9em;
+      padding: 12px 20px;
+    }
+  
+    #response {
+      font-size: 1.1em;
+    }
+  }
+  
